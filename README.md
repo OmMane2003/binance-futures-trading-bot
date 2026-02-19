@@ -1,28 +1,132 @@
-# Binance Futures Testnet Trading Bot
+# Binance Futures Testnet CLI Trading Bot
 
-A structured Python trading bot for Binance Futures Testnet.
+A modular Python-based command-line trading tool built to interact with the Binance Futures Testnet.
 
-## Features
+This project demonstrates clean backend architecture, API integration, lifecycle management of trading positions, and secure environment configuration.
 
-- Place MARKET orders
-- Place LIMIT orders
-- Logging with error handling
-- CLI-based execution
-- Clean modular structure
+---
 
-## Tech Stack
+## 🚀 Features
+
+- Place MARKET and LIMIT futures orders
+- View open positions
+- View account balance (wallet + unrealized PnL)
+- Close positions safely using `reduceOnly`
+- Environment-based API key management
+- Clean modular architecture with separation of concerns
+
+---
+
+## 🧰 Tech Stack
 
 - Python
 - python-binance
-- dotenv
+- python-dotenv
+- argparse
 - Logging module
 
-## Project Structure
+---
 
-bot/
-client.py
-orders.py
-validators.py
-logging_config.py
-cli.py
-requirements.txt
+## 🧱 Project Structure
+trading-bot/
+│
+├── bot/
+│ ├── client.py         # Binance Futures client wrapper
+│ ├── orders.py         # Trading & account logic
+│ ├── validators.py     # Input validation
+│ ├── logging_config.py
+│
+├── cli.py              # CLI entry point
+├── .env                # API keys (excluded via .gitignore)
+├── requirements.txt
+└── README.md
+
+
+
+The project separates:
+
+- API connection layer  
+- Business logic (orders & account operations)  
+- CLI interaction layer  
+
+This mirrors real-world backend system design principles.
+
+---
+
+## ⚙️ Setup
+
+### 1. Clone the repository
+
+git clone <your-repo-url>
+cd trading-bot
+
+### 2. Install dependencies
+
+pip install -r requirements.txt
+
+
+### 3. Create `.env` file
+
+BINANCE_API_KEY=your_testnet_key
+BINANCE_SECRET_KEY=your_testnet_secret
+
+
+
+This project uses Binance Futures **Testnet** for safe experimentation.
+
+---
+
+## 🖥 Usage
+
+### Place Market Order
+
+python cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.001
+
+### Place Limit Order
+
+python cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price 70000
+
+### View Open Positions
+
+python cli.py --positions
+
+### View Account Balance
+
+python cli.py --balance
+
+### Close Position
+
+python cli.py --close BTCUSDT
+
+
+---
+
+## 🛡 Why Testnet?
+
+All operations are executed on Binance Futures Testnet to:
+
+- Avoid real capital risk
+- Safely test trading lifecycle logic
+- Simulate real derivatives trading behavior
+
+---
+
+## 🧠 Engineering Focus
+
+This project was built to demonstrate:
+
+- Clean modular backend design
+- Secure environment configuration
+- REST API interaction
+- Futures trading lifecycle management
+- Structured CLI design
+- Clear output formatting and error handling
+
+---
+
+## 🔮 Future Improvements
+
+- Enhanced logging & monitoring
+- Docker containerization
+- Cloud deployment
+- Strategy module integration
