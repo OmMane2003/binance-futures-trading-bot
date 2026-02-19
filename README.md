@@ -1,6 +1,5 @@
 # Binance Futures Testnet CLI Trading Bot
-
-A modular Python-based command-line trading tool built to interact with the Binance Futures Testnet.
+Backend-focused CLI trading system built in Python with modular architecture and lifecycle position management for Binance Futures Testnet.
 
 This project demonstrates clean backend architecture, API integration, lifecycle management of trading positions, and secure environment configuration.
 
@@ -57,8 +56,8 @@ This mirrors real-world backend system design principles.
 
 ### 1. Clone the repository
 
-git clone <your-repo-url>
-cd trading-bot
+git clone https://github.com/OmMane2003/binance-futures-trading-bot.git
+cd binance-futures-trading-bot
 
 ### 2. Install dependencies
 
@@ -130,3 +129,4 @@ This project was built to demonstrate:
 - Docker containerization
 - Cloud deployment
 - Strategy module integration
+
