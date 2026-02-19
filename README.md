@@ -27,18 +27,18 @@ This project demonstrates clean backend architecture, API integration, lifecycle
 ---
 
 ## 🧱 Project Structure
+
+```
 trading-bot/
-│
 ├── bot/
-│ ├── client.py         # Binance Futures client wrapper
-│ ├── orders.py         # Trading & account logic
-│ ├── validators.py     # Input validation
-│ ├── logging_config.py
-│
-├── cli.py              # CLI entry point
-├── .env                # API keys (excluded via .gitignore)
+│   ├── client.py
+│   ├── orders.py
+│   ├── validators.py
+│   └── logging_config.py
+├── cli.py
 ├── requirements.txt
 └── README.md
+```
 
 
 
@@ -129,4 +129,5 @@ This project was built to demonstrate:
 - Docker containerization
 - Cloud deployment
 - Strategy module integration
+
 
